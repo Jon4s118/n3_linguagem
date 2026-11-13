@@ -1,4 +1,6 @@
 <?php
+require_once "verificar-login.php";
+require_once "conexao.php";
 // Ao abrir este arquivo diretamente, carrega a tela e o contexto comum.
 if (!defined('CONTEXTO_PRODUTOS')) {
     $operacaoProduto = 'inserir';

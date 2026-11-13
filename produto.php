@@ -1,4 +1,6 @@
 <?php
+require_once "verificar-login.php";
+require_once "conexao.php";
 $paginaProdutos = 'produto.php';
 require __DIR__ . '/contexto-produtos.php';
 ?>

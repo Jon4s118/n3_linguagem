@@ -19,5 +19,5 @@
         <a class="<?= $paginaAtual === "historico.php" ? "ativo" : "" ?>" href="historico.php">Historico</a>
     </nav>
 
-    <a class="sair" href="#">Encerrar sessao</a>
+    <a class="sair" href="logout.php">Encerrar sessão</a>
 </aside>
