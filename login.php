@@ -29,8 +29,8 @@ unset($_SESSION['erro_login']);
             <?php endif; ?>
 
             <div class="campo-formulario">
-                <label for="text">usuário</label>
-                <input type="text" name="usuário" id="email" required autofocus>
+                <label for="email">usuário</label>
+                <input type="text" name="email" id="email" required autofocus>
             </div>
 
             <div class="campo-formulario">
