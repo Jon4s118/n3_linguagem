@@ -2,7 +2,7 @@
 date_default_timezone_set("America/Cuiaba");
 $data = date("d/m/Y");
 $hora = date("H:i");
-$usuario = "Administrativo";
+$usuario = htmlspecialchars($_SESSION['nome'] ?? 'Visitante', ENT_QUOTES, 'UTF-8');
 $tituloPagina = $tituloPagina ?? "Visão geral";
 ?>
 <header class="cabecalho">
