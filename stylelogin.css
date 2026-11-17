@@ -1,0 +1,60 @@
+
+/* Centraliza a página inteira */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+
+/* Centraliza o formulário */
+.pagina-login {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Aparência do formulário */
+.formulario {
+    width: 100%;
+    max-width: 350px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Espaçamento dos campos */
+.campo-formulario {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.campo-formulario label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.campo-formulario input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Botão */
+.botao-principal {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2563eb;
+    color: white;
+    cursor: pointer;
+}

@@ -1,6 +1,9 @@
+
 <?php
 // Este arquivo prepara os dados usados pelas duas versões da tela.
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 define('CONTEXTO_PRODUTOS', true);
 $origem = $_POST['origem'] ?? $_GET['origem'] ?? $paginaProdutos;
 // Lista fixa: nunca redirecionamos para um endereço fornecido livremente.

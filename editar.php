@@ -1,6 +1,10 @@
 <?php
 require_once "verificar-login.php";
 require_once "conexao.php";
+$paginaProdutos = $paginaProdutos ?? 'produtos.php';
+$categorias = $categorias ?? [];
+$erros = $erros ?? [];
+$campos = $campos ?? [];
 // Ao abrir este arquivo diretamente, carrega a tela e o contexto comum.
 if (!defined('CONTEXTO_PRODUTOS')) {
     $operacaoProduto = 'editar';

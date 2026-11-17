@@ -1,6 +1,8 @@
 <?php
 require_once "verificar-login.php";
 require_once "conexao.php";
+// Autorização no servidor: somente administrador exclui, mesmo com acesso direto à URL.
+exigirPerfil(['administrador']);
 // Ao abrir este arquivo diretamente, carrega a tela e o contexto comum.
 if (!defined('CONTEXTO_PRODUTOS')) {
     $operacaoProduto = 'deletar';

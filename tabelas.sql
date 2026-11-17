@@ -171,3 +171,21 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- Ajuste da tabela usuarios para armazenar senha com hash (password_hash).
+-- Execute no phpMyAdmin, no banco estoque_ads. NÃO apaga produtos nem movimentações.
+
+-- 1) Remove contas antigas (senha em texto puro, coluna varchar(50)).
+DELETE FROM `usuarios`;
+
+-- 2) senha -> senha_hash (bcrypt gera 60 caracteres; varchar(255) é o recomendado).
+ALTER TABLE `usuarios`
+  CHANGE `senha` `senha_hash` VARCHAR(255) NOT NULL,
+  MODIFY `perfil` ENUM('administrador','almoxarife') NOT NULL DEFAULT 'almoxarife',
+  ADD UNIQUE KEY `uk_usuarios_email` (`email`);
+
+-- 3) Contas FICTÍCIAS de teste.
+--    admin@teste.com  / Admin@123  (administrador)
+--    almox@teste.com  / Almox@123  (almoxarife)
+INSERT INTO `usuarios` (`nome`, `email`, `senha_hash`, `perfil`, `ativo`) VALUES
+('Administrador Teste', 'admin@teste.com', '$2y$10$FBMm/2cL2R4HQA8SbJjCdOdzwR3lY2rC1vHGcgR85DjTyofZuUgZG', 'administrador', 1),
+('Almoxarife Teste',    'almox@teste.com', '$2y$10$6/0xPRiKpiDJE3.ZERtoWOhPS1uYDIOGfdkuTxh6FOiW7GI0Gt8x2', 'almoxarife',    1);

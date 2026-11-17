@@ -15,11 +15,12 @@ unset($_SESSION['erro_login']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estoque Fácil | Login</title>
-    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="stylelogin.css">
 </head>
 <body>
     <div class="pagina-login">
         <form method="POST" action="autenticar.php" class="formulario">
+        
             <h1>Estoque Fácil</h1>
             <p>Faça login para continuar</p>
 
@@ -28,8 +29,8 @@ unset($_SESSION['erro_login']);
             <?php endif; ?>
 
             <div class="campo-formulario">
-                <label for="email">E-mail</label>
-                <input type="email" name="email" id="email" required autofocus>
+                <label for="text">usuário</label>
+                <input type="text" name="usuário" id="email" required autofocus>
             </div>
 
             <div class="campo-formulario">

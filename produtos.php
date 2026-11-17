@@ -123,6 +123,8 @@ require __DIR__ . '/contexto-produtos.php';
                                         <div class="acoes-produto">
                                             <a class="botao-secundario" href="editar.php?origem=<?= $paginaProdutos ?>&amp;editar=<?= (int) $produto['id'] ?>">Editar</a>
                                             <!-- Cada formulário envia apenas o ID da sua linha. -->
+                                            <?php /* Interface: só o administrador vê o botão. A permissão real é checada em deletar.php. */ ?>
+                                            <?php if (usuarioEhAdministrador()): ?>
                                             <form method="POST" action="deletar.php" onsubmit="return confirm('Deseja excluir este produto? Esta ação não pode ser desfeita.');">
                                                 <input type="hidden" name="origem" value="<?= $paginaProdutos ?>">
                                                 <input type="hidden" name="acao" value="excluir">
@@ -130,6 +132,7 @@ require __DIR__ . '/contexto-produtos.php';
                                                 <input type="hidden" name="csrf" value="<?= escaparProduto($_SESSION['csrf_produto']) ?>">
                                                 <button class="botao-excluir" type="submit">Excluir</button>
                                             </form>
+                                            <?php endif; ?>
                                         </div>
                                     </td>
                                 </tr>
