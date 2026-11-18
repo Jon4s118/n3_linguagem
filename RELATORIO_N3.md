@@ -1,7 +1,7 @@
 # Estoque Fácil — Autenticação e controle de acesso (Atividade N3)
 
 **Disciplina:** Linguagem de Programação — ADS, 2º semestre — FASIPE Sorriso
-**Dupla:** Maria Luiza Figueiredo Correa e **[NOME DO(A) COLEGA — preencher]**
+**Dupla:** Maria Luiza Figueiredo Corrêa e Jonas Gabriel Aves da Silva
 **Repositório:** https://github.com/Jon4s118/n3_linguagem
 
 ## 1. Instalação
